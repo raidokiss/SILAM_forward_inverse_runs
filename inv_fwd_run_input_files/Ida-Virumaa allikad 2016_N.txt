@@ -1,0 +1,28 @@
+0	0	facilityx	facilityy	name	temperature	velocity	diameter in	diameter out	height	emission	substancenumber	pollutant	type	algv„„rtused				
+59.403679	27.746042	0	0	001-Aurukatelde korsten	141	7	4,2	4,2	120	2,41908	8	NOX	eljaam	1,05016	1,36892			
+59.404660	27.744739	0	0	004-Koostootejaama korsten	120	9	1	1	30	1,04911	8	NOX	eljaam				eljaam	duplicate
+59.274111	27.904064	0	0	101-Ploki nr.1.2.	200	20	8	8	250	102,9813	8	NOX	eljaam	51,4278	51,5535		fact3vah	duplicate
+59.395355	27.241962	0	0	101-suitsukorsten	160	2	6	6	150	16,6963	8	NOX	eljaam	4,23595	3,66522	8,79513		
+59.273946	27.902973	0	0	103-Plokk 3	75	14	5,95	5,95	95	13,5372	8	NOX	eljaam					
+59.273964	27.902975	0	0	103-Plokk nr. 3	77	14	5,95	5,95	95	14,9238	8	NOX	eljaam					
+59.273924	27.902813	0	0	104-Plokk nr. 4	77	14	5,95	5,95	95	15,0143	8	NOX	eljaam					
+59.273906	27.902811	0	0	104-Plokk4	75	14	5,95	5,95	95	6,68759	8	NOX	eljaam					
+59.395137	27.242047	0	0	104-Vaavliarastusseadme korste	65	15	1,9	1,9	70	2,86689	8	NOX	eljaam					
+59.395119	27.242081	0	0	107-Vaavliarastusseadme korste	76	18	1,9	1,9	70	3,80292	8	NOX	eljaam					
+59.496407	26.526319	0	0	10b-Polevkiviveski nr. 2 korst	40	1	2,5	2,5	42	1,99061	8	NOX	fact3vah					
+59.497697	26.529771	0	0	15 a-poordahi nr.2	200	3	6	6	80	13,9568	8	NOX	fact3vah					
+59.497984	26.529333	0	0	15 b-Poordahjud nr. 3 ja nr. 4	200	6	6	6	80	27,4174	8	NOX	fact3vah	12,6229	14,7945			
+59.403687	27.746060	0	0	1-C-35-40	141	7	4,2	4,2	120	3,10263	8	NOX	eljaam	1,40501	1,69762			
+59.273174	27.899916	0	0	201-Plokk nr 7	200	10	8	8	250	40,4327	8	NOX	eljaam	17,3619	23,0708			
+59.273431	27.902757	0	0	205-Plokk 5	75	15	5,95	5,95	95	17,3454	8	NOX	eljaam					
+59.273449	27.902759	0	0	205-Plokk nr. 5	77	15	5,95	5,95	95	17,914	8	NOX	eljaam					
+59.273452	27.900827	0	0	206-Plokk 6	75	15	5,95	5,95	95	14,9157	8	NOX	eljaam					
+59.273470	27.900829	0	0	206-Plokk nr. 6	77	15	5,95	5,95	95	19,0521	8	NOX	eljaam					
+59.272902	27.898480	0	0	208-Plokk 8	180	16	4,85	4,85	95	12,7103	8	NOX	eljaam					
+59.272920	27.898482	0	0	208-Plokk nr. 8	180	16	4,85	4,85	95	9,72888	8	NOX	eljaam					
+59.274628	27.890630	0	0	280-Enefit280 korsten	200	23	2	2	85	9,47792	8	NOX	fact3vah	3,91886	5,55906			
+59.270948	27.896765	0	0	300-Alstom CFB	142	21	5	5	200	19,8068	8	NOX	eljaam					
+59.270477	27.893549	0	0	300-korsten	142	21	5	5	200	15,4981	8	NOX	eljaam					
+59.353694	26.940381	0	0	500-SEJ korsten	160	4	2,8	2,8	96	1,65829	8	NOX	eljaam					
+59.352946	28.116372	0	0	601-energiaplokk nr 11.12 . ka	170	7	7	7	180	25,63787	8	NOX	eljaam	1,21397	24,4239			
+59.352937	28.116371	0	0	601-Korsten	170	7	7	7	180	27,26098	8	NOX	eljaam	1,54618	25,7148			

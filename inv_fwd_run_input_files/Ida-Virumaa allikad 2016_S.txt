@@ -1,0 +1,22 @@
+0	0	facilityx	facilityy	name	temperature	velocity	diameter in	diameter out	height	emission	substancenumber	pollutant	type	celsius	m/s	m	m	m	g/s	elektrijaam		3 vahetust t””stus	
+59.274111	27.904064	0	0	101-Ploki nr.1.2.	200	20	8	8	250	292,819	145	SO2	eljaam										
+59.273174	27.899916	0	0	201-Plokk nr 7	200	10	8	8	250	141,922	145	SO2	eljaam										
+59.353703	26.940399	0	0	500-SEJ korsten	160	4	2,8	2,8	96	142,5729	145	SO2	eljaam										
+59.352937	28.116371	0	0	601-Korsten	170	7	7	7	180	71,53795	145	SO2	eljaam										
+59.273452	27.900827	0	0	206-Plokk 6	75	15	5,95	5,95	95	44,115	145	SO2	eljaam										
+59.273431	27.902757	0	0	205-Plokk 5	75	15	5,95	5,95	95	43,9256	145	SO2	eljaam										
+59.273946	27.902973	0	0	103-Plokk 3	75	14	5,95	5,95	95	37,6141	145	SO2	eljaam										
+59.395355	27.241962	0	0	101-suitsukorsten	160	2	6	6	150	25,57651	145	SO2	eljaam										
+59.273906	27.902811	0	0	104-Plokk4	75	14	5,95	5,95	95	11,9382	145	SO2	eljaam										
+59.386197	27.227741	0	0	065-Elektroodkoksi seadme kuup	270	0	1,8	1,8	45	11,6568	145	SO2	fact3vah										
+59.395137	27.242047	0	0	104-Vaavliarastusseadme korste	65	15	1,9	1,9	70	8,67693	145	SO2	eljaam										
+59.403679	27.746042	0	0	001-Aurukatelde korsten	141	7	4,2	4,2	120	8,54511	145	SO2	eljaam										
+59.385873	27.228855	0	0	066-Elektroodkoksi seadme kuup	248	0	1,8	1,8	45	5,8284	145	SO2	fact3vah										
+59.395119	27.242081	0	0	107-Vaavliarastusseadme korste	76	18	1,9	1,9	70	6,53341	145	SO2	eljaam										
+59.383471	27.235921	0	0	105-Katlamaja korsten	160	4	5,4	5,4	120	5,00621	145	SO2	eljaam										
+59.387196	27.239022	0	0	310-Petroter-1 suitsukorsten	142	21	1,6	1,6	100	4,59441	145	SO2	fact3vah										
+59.387574	27.240062	0	0	312-Petroter-2 suitsukorsten	142	21	1,6	1,6	100	3,72996	145	SO2	fact3vah										
+59.353696	26.937495	0	0	070-TSK-500	170	15	0,8	0,8	75	3,56855	145	SO2	fact3vah										
+59.388664	27.232678	0	0	055-Polevkivioli destillatsioo	275	6	1,4	1,4	60	3,22242	145	SO2	fact3vah										
+59.387593	27.240028	0	0	313-Petroter-3 suitsukorsten	142	21	1,6	1,6	100	2,27323	145	SO2	fact3vah										
+59.455504	26.864141	0	0	402-Poletusahi	110	20	1	1	20	2,09445	145	SO2	fact3vah										
