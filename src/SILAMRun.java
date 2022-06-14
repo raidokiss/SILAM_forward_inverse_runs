@@ -2,14 +2,14 @@ import java.io.*;
 import java.util.List;
 
 public class SILAMRun {
-    private final String directionInTime; //FORWARD või INVERSE
-    private final String ctrlFileName; //läheb otse case_name-ks, ilma faililaiendita
-    private final String pointSourceFileName; //.v5 fail, ilma faililaiendita
-    private final String startTime, endTime; //need peavad olema SILAMile vastuvõetaval kujul
-    private final String newLine = System.lineSeparator(); //süsteemi reavahetuse märk
-    private String layerThickness; //õhukihtide paksuse sõne
+    private final String directionInTime; //FORWARD or INVERSE
+    private final String ctrlFileName; //goes straight to case_name, without file extension
+    private final String pointSourceFileName; //.v5 file, without file extension
+    private final String startTime, endTime; //must be in SILAM time format
+    private final String newLine = System.lineSeparator();
+    private String layerThickness; //format example: "20. 20. 20. 20. 20. 20. 80. 200. 400. 1200. 2000."
 
-    //konstruktor
+    //constructor
     public SILAMRun(String directionInTime, String ctrlFileName, String pointSourceFileName, String startTime, String endTime) {
         this.directionInTime = directionInTime;
         this.ctrlFileName = ctrlFileName;
@@ -22,47 +22,47 @@ public class SILAMRun {
         this.layerThickness = layerThickness;
     }
 
-    //meetodid
-    public void generatePointSourceFile(List<PointSource> sources) throws Exception { //allikafaili genereerimine
+    //methods
+    public void generatePointSourceFile(List<PointSource> sources) throws Exception {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(pointSourceFileName + ".v5"))) {
             bw.write("# This is a file describing a point source for SILAM version 5, generated w/ Java" + newLine);
-            for (PointSource allikas : sources) {
+            for (PointSource source : sources) {
                 bw.write("POINT_SOURCE_5" + newLine + newLine);
 
-                bw.write("source_name = " + allikas.getSourceName() + newLine +
-                        "source_sector_name = " + newLine + newLine); //see jäi tühjaks
+                bw.write("source_name = " + source.getSourceName() + newLine +
+                        "source_sector_name = " + newLine + newLine); //does not need to be specified
 
-                bw.write("source_longitude = " + allikas.getSourceLon() + newLine +
-                        "source_latitude = " + allikas.getSourceLat() + newLine +
+                bw.write("source_longitude = " + source.getSourceLon() + newLine +
+                        "source_latitude = " + source.getSourceLat() + newLine +
                         "plume_rise = YES" + newLine +
                         "release_rate_unit = g/sec" + newLine + newLine);
 
                 bw.write("vertical_unit = m  #hpa" + newLine +
-                        "stack_height = " + allikas.getStackHeight() + " m" + newLine + newLine);
+                        "stack_height = " + source.getStackHeight() + " m" + newLine + newLine);
 
-                List<String> allikajoru = allikas.getAllikajoru(); //heitme ajaline käik
-                for (String s : allikajoru) {
+                List<String> sourceRows = source.getSourceRows();//sourceRows see class PointSource
+                for (String s : sourceRows) {
                     bw.write(s + newLine);
                 }
 
-                if (directionInTime.equals("INVERSE")) { //ajalised käigud vastavalt allikale
+                if (directionInTime.equals("INVERSE")) {
                     bw.write("hour_in_day_index = PASSIVE_COCKTAIL 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  1. 1. 1." + newLine +
                             "day_in_week_index = PASSIVE_COCKTAIL 1. 1. 1. 1. 1. 1. 1." + newLine +
                             "month_in_year_index = PASSIVE_COCKTAIL 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.");
                 } else if (directionInTime.equals("FORWARD")) {
                     bw.write(newLine);
                     bw.write("hour_in_day_index = PASSIVE_COCKTAIL");
-                    String[] hidi = allikas.getHourInDayIndex();
+                    String[] hidi = source.getHourInDayIndex();
                     for (String s : hidi) {
                         bw.write(" " + s);
                     }
                     bw.write(newLine + "day_in_week_index = PASSIVE_COCKTAIL");
-                    String[] diwi = allikas.getDayInWeekIndex();
+                    String[] diwi = source.getDayInWeekIndex();
                     for (String s : diwi) {
                         bw.write(" " + s);
                     }
                     bw.write(newLine + "month_in_year_index = PASSIVE_COCKTAIL");
-                    String[] miyi = allikas.getMonthInYearIndex();
+                    String[] miyi = source.getMonthInYearIndex();
                     for (String s : miyi) {
                         bw.write(" " + s);
                     }
@@ -72,8 +72,8 @@ public class SILAMRun {
         }
     }
 
-    public void generateCtrlFile() throws IOException { //kontrollfaili genereerimine: standardne fail on koodi sisse kirjutatud: see oli lihtsaim lahendus.
-        //Siiski, iga jooksu puhul tuli faili veidi muuta: sisse on kirjutatud jooksu isendiväljad
+    public void generateCtrlFile() throws IOException { //standard control file written into code: easiest solution.
+        //only slight changes were needed: SILAMRun instance fields are written in
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(ctrlFileName + ".control"))) {
             bw.write("# Control file for SILAM v5.4 operational run, generated w/ Java" + newLine +
                     newLine +
@@ -135,7 +135,7 @@ public class SILAMRun {
                     "#   transformation = DMAT_SULPHUR EULERIAN " + newLine +
                     "#   transformation = CB4 EULERIAN " + newLine +
                     "#   transformation = POP_GENERAL EULERIAN " + newLine +
-                    "   transformation = ACID_BASIC EULERIAN " + newLine +
+                    "#   transformation = ACID_BASIC EULERIAN " + newLine +
                     "#   transformation = RADIOACTIVE EULERIAN " + newLine +
                     "" + newLine +
                     "#   aerosol_dynamics = SIMPLE EULERIAN " + newLine +
@@ -241,13 +241,13 @@ public class SILAMRun {
 
             bw.write("END_CONTROL_V5_3");
         }
-        //EKUKi serveris jooksutamise käsklused minu kasutaja jaoks
+        //commands for myself to run SILAM in my folder in Airviro (EERC) server
         String commands = "/usr/airviro/silam/silam_v5_7 /usr/airviro/users/raido/" + ctrlFileName + ".control" + newLine;
         if (directionInTime.equals("INVERSE")) {
             commands += "cd output" + newLine;
-            commands += "ncpdq -a -time " + ctrlFileName + ".nc4 " + ctrlFileName + "_inv.nc4" + newLine;
+            commands += "ncpdq -a -time " + ctrlFileName + ".nc4 " + ctrlFileName + "_inv.nc4" + newLine; //reversing time command
             commands += "cd" + newLine;
         } else commands += newLine;
-        System.out.println(commands); //tulevad käsureale
+        System.out.println(commands); //to command line
     }
 }
